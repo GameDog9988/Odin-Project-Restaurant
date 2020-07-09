@@ -84,13 +84,22 @@ main img {
 }
 
 .menu-card {
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 200px;
   border-radius: 15px;
   background-color: darkblue;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card-hover {
   opacity: 0.15;
   transition: 0.5s;
+}
+
+.card-info {
+  position: absolute;
+  width: 260px;
+  font-size: 23px;
 }

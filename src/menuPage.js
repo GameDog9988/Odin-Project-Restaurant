@@ -50,6 +50,10 @@ const menuPage = () => {
         const menuCard = document.createElement("div");
 
         menuCard.classList.add("menu-card");
+        menuCard.setAttribute(
+          "data-order",
+          `${menuContainer.childNodes.length}`
+        );
         tabContent.appendChild(menuCard);
       }
     };
@@ -60,31 +64,31 @@ const menuPage = () => {
   const menuItems = document.querySelectorAll(".menu-card");
   menuItems.forEach((item) => {
     item.addEventListener("mouseenter", () => {
-      item.firstChild.classList.add("card-hover");
+      item.classList.add("card-hover");
 
       const text1 = document.createElement("div");
-      text1.textContent = cookies[item].name;
-      text1.classList.add("item-info");
+      text1.textContent = cookies[item.dataset.order].name;
+      text1.classList.add("card-info");
       text1.style.cssText =
         "top: 15%; left: 50%; transform: translate(-50%, -50%); border-bottom: 1px solid";
       item.appendChild(text1);
 
       const text2 = document.createElement("div");
-      text2.textContent = cookies[item].price;
-      text2.classList.add("item-info");
+      text2.textContent = cookies[item.dataset.order].price;
+      text2.classList.add("card-info");
       text2.style.cssText =
         "top: 45%; left: 50%; transform: translate(-50%, -50%);";
       item.appendChild(text2);
 
       const text3 = document.createElement("div");
-      text3.textContent = cookies[item].description;
-      text3.classList.add("item-info");
+      text3.textContent = cookies[item.dataset.order].description;
+      text3.classList.add("card-info");
       text3.style.cssText =
         "top: 75%; left: 50%; transform: translate(-50%, -50%);";
       item.appendChild(text3);
     });
     item.addEventListener("mouseleave", () => {
-      item.firstChild.classList.remove("item-hover");
+      item.classList.remove("card-hover");
       while (item.childNodes.length > 1) {
         item.removeChild(item.lastChild);
       }
