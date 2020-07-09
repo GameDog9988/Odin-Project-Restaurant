@@ -22,6 +22,8 @@ h2 {
   font-family: "Modak", cursive;
   text-align: center;
   margin: 0 0 0 1rem;
+  font-size: 2rem;
+  font-weight: normal;
 }
 
 nav {
@@ -45,6 +47,7 @@ li {
   width: 200px;
   height: 50px;
   border-radius: 25px;
+  font-weight: bold;
 }
 
 main {
@@ -78,4 +81,16 @@ main button {
 main img {
   width: 400px;
   margin: 1rem;
+}
+
+.menu-card {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  background-color: darkblue;
+}
+
+.card-hover {
+  opacity: 0.15;
+  transition: 0.5s;
 }

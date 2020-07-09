@@ -1,36 +1,30 @@
-const contentDiv = document.getElementById("content");
+import { mainPage, mainSection } from "./mainPage";
+import { menuPage } from "./menuPage";
+import { contactPage } from "./contactPage";
 
-const header = document.createElement("header");
-const main = document.createElement("main");
-const title = document.createElement("h2");
-title.textContent = "Cookie Pie";
-const cta = document.createElement("h1");
-cta.textContent = "Another One!";
-const cookieImage = document.createElement("img");
-cookieImage.src = "cookie-unsplash.jpg";
-const ctaBtn = document.createElement("button");
-ctaBtn.textContent = "Check out the menu";
-const infoCopy = document.createElement("p");
-infoCopy.textContent =
-  "Our mission is to bring peace by virtue of desserts. See for yourself.";
+mainPage();
 
-const nav = document.createElement("nav");
-const ul = document.createElement("ul");
-const menuNav = document.createElement("li");
-menuNav.textContent = "Menu";
-const contactNav = document.createElement("li");
-contactNav.textContent = "Contact";
+const title = document.querySelector("#mainTitle");
+title.addEventListener("click", () => {
+  resetTabContent();
+  mainSection();
+});
 
-ul.appendChild(menuNav);
-ul.appendChild(contactNav);
-nav.appendChild(ul);
-header.appendChild(title);
-header.appendChild(nav);
+const menuNav = document.querySelector("#menuTab");
+menuNav.addEventListener("click", () => {
+  resetTabContent();
+  menuPage();
+});
 
-main.appendChild(cta);
-main.appendChild(infoCopy);
-main.appendChild(ctaBtn);
-main.appendChild(cookieImage);
+const contactNav = document.querySelector("#contactTab");
+contactNav.addEventListener("click", () => {
+  resetTabContent();
+  contactPage();
+});
 
-contentDiv.appendChild(header);
-contentDiv.appendChild(main);
+function resetTabContent() {
+  const tabContent = document.querySelector("#tabContent");
+  while (tabContent.childNodes.length > 0) {
+    tabContent.removeChild(tabContent.lastChild);
+  }
+}
