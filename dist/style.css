@@ -55,6 +55,7 @@ li {
   height: 50px;
   border-radius: 25px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 main {
