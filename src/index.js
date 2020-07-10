@@ -22,9 +22,18 @@ contactNav.addEventListener("click", () => {
   contactPage();
 });
 
+function menuButtonClick(element) {
+  element.addEventListener("click", () => {
+    resetTabContent();
+    menuPage();
+  });
+}
+
 function resetTabContent() {
   const tabContent = document.querySelector("#tabContent");
   while (tabContent.childNodes.length > 0) {
     tabContent.removeChild(tabContent.lastChild);
   }
 }
+
+export { menuButtonClick, resetTabContent };

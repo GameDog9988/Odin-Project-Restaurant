@@ -1,3 +1,5 @@
+import { menuButtonClick } from "./index.js";
+
 const contentDiv = document.getElementById("content");
 
 const mainPage = () => {
@@ -47,6 +49,8 @@ const mainSection = () => {
 
   const ctaBtn = document.createElement("button");
   ctaBtn.textContent = "Check out the menu";
+  ctaBtn.setAttribute("class", "main-page-btn");
+  menuButtonClick(ctaBtn);
 
   const infoCopy = document.createElement("p");
   infoCopy.textContent =

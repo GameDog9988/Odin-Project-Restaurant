@@ -90,6 +90,11 @@ main img {
   margin: 1rem;
 }
 
+.main-page-btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
 .menu-card {
   width: 300px;
   height: 150px;
@@ -111,4 +116,14 @@ main img {
   position: absolute;
   width: 260px;
   font-size: 23px;
+}
+
+.contact-container {
+  background-color: burlywood;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.contact-container p {
+  font-size: 2rem;
 }
